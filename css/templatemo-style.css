@@ -410,6 +410,9 @@ input { height: 50px; }
 }
 
 /* START MEDIA 360 */
+@media screen and (max-width:480px){
+  .navbar-default .navbar-brand {  padding-top: 2px; }
+}
 @media screen and (max-width:360px){
   .navbar-default .navbar-brand {  padding-top: 2px; }
 }
