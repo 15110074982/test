@@ -21,8 +21,16 @@
 	}
 	var code = kv('code');
 		if(code!=""||code!=false){
-			alert(code);
-		 	location.href="https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0e1ba933fe54edc1&secret=e2c86e0383c12966887b0a81f37e5da8&code=code&grant_type=authorization_code"
+		 $.ajax({  
+                    type:'get',  
+                    url:'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0e1ba933fe54edc1&secret=e2c86e0383c12966887b0a81f37e5da8&code='+code+'&grant_type=authorization_code',   
+                    dataType:'json',  
+                    success:function(result){  
+			    alert(result);  
+			    alert(result.openid);  
+                        }  
+                    });      
+		 	
 		
 		}
 	</script>
