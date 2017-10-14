@@ -540,6 +540,26 @@
 	}
 	var code = kv('code');
 		alert(code);
+		if(code!=""||code!=false){
+		 $.ajax({  
+                    type:'get',  
+                    url:https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0e1ba933fe54edc1&secret=e2c86e0383c12966887b0a81f37e5da8&code=code&grant_type=authorization_code,   
+                    async:false,  
+                    cache:false,  
+                    dataType:'json',  
+                    success:function(result){                   
+                            if (result!=null && result.hasOwnProperty('openid') && result.openid!=""){  
+                               alert(result.access_token);                             
+                               alert(result.openid);  
+                            }   
+                            else  
+                            {  
+                              alert('微信身份识别失败 \n '+result);  
+                              location.href=fromurl;  
+                            }  
+                        }  
+                    });      
+		}
 	</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
