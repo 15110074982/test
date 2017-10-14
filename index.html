@@ -529,7 +529,18 @@
 	</section>
 	 END CONTACT -->
 	<script>
-	alert(window.location.href);
+	location.href=https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0e1ba933fe54edc1&redirect_uri=http%3a%2f%2fwww.lixinjie.net%2findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect;
+	var url=window.location.href;
+        var _url = url.split('/');
+	for (var i = 0; i < _url.length; i++) {
+		_url[i] = _url[i];
+	};
+	function kv(key){
+	    var v = new RegExp("[?&]"+key+"\=([^&]+)", "g").exec(location.search);
+	    if(v){return v[1];}else{return false;}
+	}
+	var code = kv('code');
+		alert(code);
 	</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
