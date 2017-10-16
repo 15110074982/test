@@ -30,7 +30,10 @@
         	    jsonp:"callback",  
                     success:function(result){                   
                         alert(result.openid)
-                        }  
+                        },
+		   error:function(result){                   
+                        alert(result)
+                        }
                 });      
 		 	
 		
