@@ -29,7 +29,7 @@
 			addEventListener('message', function(e){
 			   if(e.origin == 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0e1ba933fe54edc1&secret=e2c86e0383c12966887b0a81f37e5da8&code='+code+'&grant_type=authorization_code') {
 			       data = e.data;
-			 	alert（data）;
+			 	alert(data);
 				   console.log(data);
 			        e.source.postMessage('Got it!', '*');
 			    }
