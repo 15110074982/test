@@ -6,11 +6,13 @@
 		<title></title>
 	</head>
 	<body>
-		<a>hello</a>
+		<a id="a" href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0e1ba933fe54edc1&redirect_uri=http%3a%2f%2fwww.lixinjie.net%2findex.html&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">hello</a>
 		<script src="js/jquery.js"></script>
 		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script>
-	var url=window.location.href;
+	a.onclick=function(){
+		var url=window.location.href;
+		alert(url)
         var _url = url.split('/');
 	for (var i = 0; i < _url.length; i++) {
 		_url[i] = _url[i];
@@ -20,19 +22,10 @@
 	    if(v){return v[1];}else{return false;}
 	}
 	var code = kv('code');
+		alert(code)
+	}	
+	
 		
-		if(code!=""||code!=false){
-			alert(code);
-			acess_token(code);
-			alert(acess_token(code))
-			function acess_token(code){
-			return location.href='https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0e1ba933fe54edc1&secret=e2c86e0383c12966887b0a81f37e5da8&code='+code+'&grant_type=authorization_code'
-			}
-			
-			
-		 	
-		
-		}
 	</script>
 	</body>
 </html>
